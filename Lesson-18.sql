@@ -102,7 +102,6 @@ CREATE TABLE employees ( id INT PRIMARY KEY, name VARCHAR(100), salary DECIMAL(1
 INSERT INTO employees (id, name, salary, department_id) VALUES (1, 'Alex', 70000, 1), (2, 'Blake', 90000, 1), (3, 'Casey', 50000, 2), (4, 'Dana', 60000, 2), (5, 'Evan', 75000, 1);
 
 -- query:
-SELECT * FROM employees;
 SELECT * FROM employees WHERE salary > (SELECT AVG(e1.salary) FROM employees e1) AND
 salary < (SELECT MAX(e2.salary) FROM employees e2 WHERE e2.department_id = department_id);
 
